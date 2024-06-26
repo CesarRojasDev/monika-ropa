@@ -1,0 +1,28 @@
+---
+import Facebook from './Icons/Facebook.astro'
+import Instagram from './Icons/Instagram.astro'
+---
+
+<footer
+  class='grid grid-cols-1 md:grid-cols-3 justify-center items-center gap-4 w-full py-12 md:py-12 lg:px-[80px] px-4 md:px-16 bg-[#E4E4E4]  text-center'
+>
+  <a class='text-lg md:text-xl font-bold md:text-start' href='#inicio'>
+    MONIKA ZAVALA ATELIER
+  </a>
+  <div class='flex flex-col items-center  gap-2 md:gap-4'>
+    <span class='text-lg md:text-[1rem] font-semibold'>Horario de atención</span>
+    <p class='text-sm md:text-[0.9rem] lg:text-[1rem] '>Lunes a Viernes de 9:00 a 17:00</p>
+    <p class='text-sm md:text-[0.9rem] lg:text-[1rem] '>Sábado de 9:00 a 16:00</p>
+  </div>
+  <div class='flex flex-col items-center gap-2 md:gap-4'>
+    <span class='text-lg md:text-[1rem] font-semibold'>¡Síguenos en nuestras redes sociales!</span>
+    <div class='flex justify-center gap-4'>
+      <a href='https://www.facebook.com/MonikaZavalaAtelie/' aria-label='Facebook'>
+        <Facebook class='w-6 h-6 md:w-7 md:h-7' />
+      </a>
+      <a href='https://www.instagram.com/monikazavalaatelier/' aria-label='Instagram'>
+        <Instagram class='w-6 h-6 md:w-7 md:h-7' />
+      </a>
+    </div>
+  </div>
+</footer>

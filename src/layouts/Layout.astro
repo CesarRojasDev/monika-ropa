@@ -1,0 +1,45 @@
+---
+import { ViewTransitions, fade } from 'astro:transitions';
+
+import Footer from '../components/Footer.astro'
+import Header from '../components/Header.astro'
+
+interface Props {
+  title: string
+}
+
+const { title } = Astro.props
+---
+
+<!doctype html>
+<html lang='en' class='scroll-smooth'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='description' content='Monika description' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='generator' content={Astro.generator} />
+    <title>{title}</title>
+     <ViewTransitions />
+  </head>
+  <body transition:animate={fade({ duration: "0.4s"})}>
+    <Header  transition:persist/>
+    <main transition:animate="slide">
+      <slot />
+    </main>
+	<Footer />
+  </body>
+</html>
+
+<style is:global>
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: Poppins, sans-serif;
+    background-color: #FAF9F8;
+  }
+</style>
+

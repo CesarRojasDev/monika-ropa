@@ -1,0 +1,61 @@
+---
+interface Props {
+  title: string
+  img: string
+  description: string
+  price: number
+  colors: string[]
+  offerPrice?: number
+  id: number
+  index: number
+}
+
+const { title, description, price, colors, img, offerPrice, id, index } = Astro.props
+---
+
+<article class='flex flex-col h-auto justify-end'>
+  <a href={`/shop/${id}`}>
+    <div class='bg-[#E4E4E4] rounded-lg p-6'>
+      <img
+        src={img}
+        alt={title}
+        loading={index < 4 ? 'eager' : 'lazy'}
+        class='w-full h-auto rounded-lg hover:scale-110 transition ease-in-out'
+      />
+    </div>
+    <div class='flex flex-col items-start justify-center mt-4'>
+      <p class='text-xl font-bold'>{title}</p>
+      <p class='text-lg mt-2'>
+        {
+          description.length > 100 ? (
+            <span class='opacity-80'>{`${description.slice(0, 100)}...`}</span>
+          ) : (
+            description
+          )
+        }
+      </p>
+
+      {
+        offerPrice ? (
+          <div class='flex items-center space-x-2'>
+            <p class='text-xl opacity-50 line-through'>s/.{price}</p>
+            <p class='text-xl font-bold text-red-600'>s/.{offerPrice}</p>
+          </div>
+        ) : (
+          <p class='text-xl'>s/.{price}</p>
+        )
+      }
+      <div class='flex flex-row items-center gap-4'>
+        {
+          colors?.map((color) => (
+            <div
+              class='h-3 w-3 rounded-full mt-4'
+              style={`background-color: ${color}`}
+              title={color}
+            />
+          ))
+        }
+      </div>
+    </div>
+  </a>
+</article>

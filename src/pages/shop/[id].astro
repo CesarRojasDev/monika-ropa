@@ -1,0 +1,92 @@
+---
+import Layout from '../../layouts/Layout.astro'
+import { ROPA } from '../../services/Ropa'
+import RelatedProducts from '../../components/RelatedProducts.astro'
+
+const { id } = Astro.params
+const product = ROPA.find((p) => p.id === +id)
+
+export function getStaticPaths() {
+  return [
+    { params: { id: '1' } },
+    { params: { id: '2' } },
+    { params: { id: '3' } },
+    { params: { id: '4' } },
+    { params: { id: '5' } },
+    { params: { id: '6' } },
+    { params: { id: '7' } },
+    { params: { id: '8' } },
+  ]
+}
+---
+
+<Layout title='Shop'>
+  <section
+    class='flex flex-col md:flex-row items-center justify-center py-12 px-4 sm:px-6 md:px-8 lg:px-12'
+  >
+    <div
+      class='flex flex-col items-center justify-center w-full md:w-1/2 mb-8 md:mb-0'
+    >
+      {
+        product?.img && (
+          <img
+            src={product.img}
+            alt={product.title}
+            class='transition duration-500 ease-in-out transform hover:scale-105'
+            transition:name='product-image'
+          />
+        )
+      }
+    </div>
+    <div class='flex flex-col items-start justify-center w-full md:w-1/2'>
+      <h1 class='text-4xl md:text-5xl font-semibold'>{product?.title}</h1>
+      <p class='text-lg opacity-60 my-6 leading-relaxed'>
+        {product?.description}
+      </p>
+      <div class='flex flex-row items-center gap-4 mb-4'>
+        <span class='text-xl font-semibold'>Tallas: </span>
+        {
+          product?.sizes?.map((size) => (
+            <div class='flex items-center gap-2 border border-black px-2 hover:bg-black hover:text-white transition duration-300 ease-in-out'>
+              <span class='text-lg'>{size}</span>
+            </div>
+          ))
+        }
+      </div>
+      <div class='flex flex-row items-center gap-4 mb-4'>
+        <span class='text-xl font-semibold'>Colores: </span>
+
+        {
+          product?.colors?.map((color) => (
+            <div
+              class='h-5 w-5 rounded-full'
+              style={`background-color: ${color}`}
+              title={color}
+            />
+          ))
+        }
+      </div>
+      <div class='flex items-center mb-4'>
+        <span class='text-xl font-semibold mr-2'>Precio:</span>
+        {
+          product?.offerPrice ? (
+            <div class='flex items-center space-x-2'>
+              <p class='text-xl opacity-50 line-through'>s/.{product?.price}</p>
+              <p class='text-xl font-bold text-red-600'>
+                s/.{product?.offerPrice}
+              </p>
+            </div>
+          ) : (
+            <p class='text-xl'>s/.{product?.price}</p>
+          )
+        }
+      </div>
+      <button
+        class='mt-6 px-8 py-2  bg-black text-white border-white hover:bg-gray-950 hover:text-white  transition ease-in-out'
+      >
+        Comprar
+      </button>
+    </div>
+  </section>
+  <RelatedProducts title='Otros también compraron' />
+</Layout>

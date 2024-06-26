@@ -1,0 +1,47 @@
+---
+import Layout from '../../layouts/Layout.astro'
+---
+
+<Layout title='About'>
+  <section class='w-full py-12 px-4 sm:px-6 md:px-8 lg:px-[80px]' id='about'>
+    <div
+      class='flex flex-col md:flex-row items-start justify-between w-full gap-8'
+    >
+      <div class='w-full md:w-1/2 text-center md:text-left'>
+        <h2 class='text-4xl font-semibold'>Sobre nosotros</h2>
+        <h3 class='text-xl font-bold mt-6'>Misión</h3>
+        <p class='text-lg opacity-80 mt-6 leading-relaxed'>
+          En Monika Zavala Atelier, nuestra misión es crear experiencias de moda
+          excepcionales para mujeres que buscan destacarse con elegancia y
+          estilo. Nos comprometemos a ofrecer diseños exclusivos,
+          meticulosamente confeccionados con materiales de la más alta calidad,
+          fusionando la tradición artesanal con la innovación contemporánea.
+          Nuestro objetivo es inspirar confianza y empoderamiento en cada mujer
+          que usa nuestras creaciones, haciéndolas sentir hermosas, seguras y
+          auténticas en cada ocasión.
+        </p>
+        <h3 class='text-xl font-bold mt-6'>Visión</h3>
+        <p class='text-lg opacity-80 mt-6 leading-relaxed'>
+          Nos visualizamos como una marca de moda reconocida a nivel nacional e
+          internacional por nuestra excelencia en diseño, calidad y atención al
+          detalle. Aspiramos a ser líderes en la industria de la moda, siendo un
+          referente de creatividad, originalidad y sofisticación. Buscamos
+          expandir nuestro alcance para llegar a una audiencia global,
+          manteniendo siempre nuestro compromiso con la exclusividad, la
+          sostenibilidad y la ética en cada paso del proceso creativo y de
+          producción.
+        </p>
+      </div>
+      <div
+        class='w-full md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end'
+      >
+        <img
+          src='/about/about.jpg'
+          alt='about-img'
+          loading='eager'
+          class='w-full md:w-auto h-auto rounded-lg max-w-full md:max-w-[506px] max-h-[650px]'
+        />
+      </div>
+    </div>
+  </section>
+</Layout>

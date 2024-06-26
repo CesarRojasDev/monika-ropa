@@ -1,0 +1,46 @@
+---
+import MasterCard from './Icons/MasterCard.astro'
+import Paypal from './Icons/Paypal.astro'
+import Secure from './Icons/Secure.astro'
+import Visa from './Icons/Visa.astro'
+import Yape from './Icons/Yape.astro'
+
+
+---
+<section class='flex flex-col items-center justify-center w-full h-full'>
+  <div class='bg-gray-100 md:w-1/2 rounded-lg p-12 h-full shadow-[0px_2px_3px_-1px_rgba(0,0,0,0.1),0px_1px_0px_0px_rgba(25,28,33,0.02),0px_0px_0px_1px_rgba(25,28,33,0.08)]'>
+    <h5 class='text-center md:text-start font-semibold text-xl'>Resumen de Orden</h5>
+    <div class='flex items-center justify-between'>
+      <p class='text-center md:text-start text-lg text-[#64748b] opacity-80 mt-4' > Subtotal: </p>
+      <p>s/.</p>
+    </div>
+    <div class='flex items-center justify-between border-b-2 shadow-sm'>
+      <p class='text-center md:text-start text-lg text-[#64748b] opacity-80 mt-4' > Envio: </p> 
+      <p>s/.</p>
+    </div>
+    <div class='flex items-center justify-between mt-8'>
+      <h5 class='font-semibold text-xl'>Total</h5>
+      <h5>s/.</h5>
+    </div>
+    <button class='w-full px-4 py-2 mt-4 text-white bg-[#fe353c] rounded hover:bg-[#ec161e] active:bg-[#c70e15] focus:outline-none'>
+      <a href='/shop/shoppingCart'>Pagar</a>
+      <button class='w-full px-4 py-2 my-4 bg-white'>
+        <a href='/shop/store'>Continuar Comprando</a>
+      </button>
+      <p class='text-sm mt-4 text-center'> Tax included. Shipping calculated at checkout.</p>
+    </button>
+  </div>
+  <div class='flex flex-col justify-center items-center mt-6 gap-4'>
+  <div class="flex items-center justify-center">
+  <Secure class='w-5 h-5 opacity-80 mr-2' />
+  <p class='text-center md:text-start text-base'>Paga seguro con</p>
+</div>
+
+    <div class='flex'>
+      <Visa class='w-8 h-8 mr-2' />
+      <MasterCard class='w-8 h-8 mr-2' />
+      <Paypal class='w-8 h-8 mr-2' />
+      <Yape class='w-8 h-8 mr-2' />
+    </div>
+  </div>
+</section>
