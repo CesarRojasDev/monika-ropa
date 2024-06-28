@@ -1,28 +1,10 @@
 ---
-import RelatedProducts from '../../components/RelatedProducts.astro';
-import { ROPA } from '../../services/Ropa';
-import ShoppingCartItem from '../../components/ShoppingCartItem';
-import Layout from '../../layouts/Layout.astro';
-import ShoppingCartChecking from '../../components/ShoppingCartChecking.astro';
+import RelatedProducts from '../../components/RelatedProducts.astro'
+import Layout from '../../layouts/Layout.astro'
+import ShoppingWrapper from '../../components/ShoppingWrapper.tsx'
 ---
 
-
 <Layout title='Página de Pago'>
-   <section class='flex flex-col items-center justify-center w-full h-full p-4 md:px-[80px] md:py-[100px] bg-white shadow-md'>
-        <h2 class='text-center md:text-start font-semibold text-4xl my-6'>Termina tu pedido</h2>
-        <div class='flex flex-col md:flex-row items-center justify-center gap-3 w-full h-full'>
-          <div class='flex flex-col items-center justify-center w-full h-full gap-6'>
-            {ROPA.slice(0, 3).map((item, index) => (
-              <ShoppingCartItem
-                client:load
-                title={item.title}
-                img={item.img}
-                price={item.price}
-              />
-            ))}
-          </div>
-          <ShoppingCartChecking />
-        </div>
-      </section>
-      <RelatedProducts title='También te puede interesar' />
-      </Layout>
+  <ShoppingWrapper client:load />
+  <RelatedProducts title='También te puede interesar' />
+</Layout>
