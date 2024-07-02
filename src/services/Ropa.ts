@@ -1,7 +1,7 @@
 export const ROPA = [
   {
     id: 1,
-    title: 'Blusa abombado',
+    title: 'Blusa abombada',
     description:
       'Este es un polo abombado para poder usar en el juego de ropa de monika. Es un polo de color rojo y blanco con un tamaño de S y M. Es muy popular entre los clientes de ropa de monika.',
     sizes: ['S', 'M'],

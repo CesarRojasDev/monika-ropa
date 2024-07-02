@@ -8,12 +8,7 @@ interface Props {
   handleTotal: (totalPrice: number) => void;
 }
 
-const ShoppingCartItem: React.FC<Props> = ({
-  title,
-  img,
-  price,
-  handleTotal,
-}) => {
+const ShoppingCartItem: React.FC<Props> = ({ title, img, price, handleTotal, }) => {
   const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
