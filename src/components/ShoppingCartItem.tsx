@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 
 interface Props {
-  index: number
-  title: string
-  img: string
-  price: number
-  handleTotal: (totalPrice: number) => void
+  index: number;
+  title: string;
+  img: string;
+  price: number;
+  handleTotal: (totalPrice: number) => void;
 }
 
 const ShoppingCartItem: React.FC<Props> = ({
@@ -14,53 +14,54 @@ const ShoppingCartItem: React.FC<Props> = ({
   price,
   handleTotal,
 }) => {
-  const [quantity, setQuantity] = useState(1)
+  const [quantity, setQuantity] = useState(1);
 
   const handleQuantityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setQuantity(Number(e.target.value))
-  }
+    setQuantity(Number(e.target.value));
+  };
 
-  const totalPrice = quantity * price
-
-  const calculateTotal = () => {
-    handleTotal(totalPrice)
-  }
+  const totalPrice = quantity * price;
 
   useEffect(() => {
-    calculateTotal()
-  }, [quantity, price, handleTotal])
+    handleTotal(totalPrice);
+  }, [quantity, price, handleTotal, totalPrice]);
 
   return (
-    <section className='flex flex-col md:flex-row items-center p-4 justify-center gap-6 border-b-2 border-gray-400 pb-6'>
-      <div className='flex flex-col items-center justify-center '>
-        <img src={img} alt='Product-Image' className='w-full h-auto' />
-      </div>
-      <div className='flex flex-col items-center md:items-start justify-center w-full md:w-1/3'>
-        <h3 className='text-center md:text-start font-semibold text-lg'>
-          {title}
-        </h3>
-        <p className='text-center md:text-start text-base'>Color: Azul</p>
-        <p className='text-center md:text-start text-base'>Talla: M</p>
-      </div>
-      <div className='flex flex-col items-center md:items-start justify-center w-full md:w-1/3'>
-        <h4 className='text-center md:text-start font-semibold text-lg'>
-          Cantidad
-        </h4>
-        <input
-          type='number'
-          className='w-full md:w-1/2 p-2 border rounded-lg text-center'
-          value={quantity}
-          onChange={handleQuantityChange}
-        />
-      </div>
-      <div className='flex flex-col items-center md:items-start justify-center w-full md:w-1/3'>
-        <h4 className='text-center md:text-start font-semibold text-lg'>
-          Precio Total
-        </h4>
-        <span className='text-center md:text-start'>s/.{totalPrice}</span>
-      </div>
-    </section>
-  )
-}
+    <tr className='border-b border-gray-200'>
+      <td className='px-4 py-4  md:py-6'>
+        <div className='flex items-center'>
+          <div className='flex-shrink-0 h-24 w-24 md:h-40 md:w-40'>
+            <img
+              className='rounded-lg object-cover'
+              src={img}
+              alt='Product-Image'
+            />
+          </div>
+          <div className='ml-4 md:ml-6'>
+            <div className='text-sm md:text-base font-medium text-gray-900'>{title}</div>
+          </div>
+        </div>
+      </td>
+      <td className='px-4 py-4 md:px-6 md:py-6'>
+        <div className='text-center'>
+          <input
+            type='number'
+            className='w-16 p-2 border rounded-lg text-center'
+            value={quantity}
+            min={1}
+            onChange={handleQuantityChange}
+          />
+        </div>
+      </td>
+      <td className='px-4 py-4 md:px-6 md:py-6'>
+        <div className='text-center'>
+          <span className='text-lg text-gray-900'>
+            s/. {totalPrice.toFixed(2)}
+          </span>
+        </div>
+      </td>
+    </tr>
+  );
+};
 
-export default ShoppingCartItem
+export default ShoppingCartItem;

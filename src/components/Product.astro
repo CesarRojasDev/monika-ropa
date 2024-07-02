@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 interface Props {
   title: string
   img: string
@@ -16,10 +18,12 @@ const { title, description, price, colors, img, offerPrice, id, index } = Astro.
 <article class='flex flex-col h-auto justify-end'>
   <a href={`/shop/${id}`}>
     <div class='bg-[#E4E4E4] rounded-lg p-6'>
-      <img
+      <Image
         src={img}
         alt={title}
-        loading={index < 4 ? 'eager' : 'lazy'}
+        width={1000}
+        height={1000}
+        loading='lazy'
         class='w-full h-auto rounded-lg hover:scale-110 transition ease-in-out'
       />
     </div>

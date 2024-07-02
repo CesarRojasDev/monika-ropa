@@ -37,7 +37,7 @@ const ShoppingCartCheckout = ({ totalShopping }: Props) => {
           <h5>s/.{total.toFixed(2)}</h5>
         </div>
         <button className='w-full px-4 py-2 mt-4 text-white bg-[#fe353c] rounded hover:bg-[#ec161e] active:bg-[#c70e15] focus:outline-none transition duration-300'>
-          <a href='/shop/shoppingCart'>Pagar</a>
+          <a href='/shop/pay'>Pagar</a>
         </button>
         <button className='w-full px-4 py-2 mt-4 text-white bg-black hover:bg-gray-900 active:bg-gray-800 focus:outline-none'>
           <a href='/shop/store'>Continuar Comprando</a>
@@ -138,8 +138,8 @@ const ShoppingCartCheckout = ({ totalShopping }: Props) => {
                 y2='63.4'
                 gradientUnits='userSpaceOnUse'
               >
-                <stop offset='0' stop-color='#6f0384' />
-                <stop offset='1' stop-color='#a221af' />
+                <stop offset='0' stopColor='#6f0384' />
+                <stop offset='1' stopColor='#a221af' />
               </linearGradient>
             </defs>
             <g id='Capa_1-2' data-name='Capa 1'>

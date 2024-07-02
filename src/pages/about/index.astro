@@ -1,5 +1,7 @@
 ---
+import { Image } from 'astro:assets'
 import Layout from '../../layouts/Layout.astro'
+import aboutImage from '../../../public/about/about.webp'
 ---
 
 <Layout title='About'>
@@ -35,8 +37,8 @@ import Layout from '../../layouts/Layout.astro'
       <div
         class='w-full md:w-1/2 mt-8 md:mt-0 flex justify-center md:justify-end'
       >
-        <img
-          src='/about/about.jpg'
+        <Image
+          src={aboutImage}
           alt='about-img'
           loading='eager'
           class='w-full md:w-auto h-auto rounded-lg max-w-full md:max-w-[506px] max-h-[650px]'

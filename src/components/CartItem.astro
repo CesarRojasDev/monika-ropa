@@ -1,4 +1,6 @@
 ---
+import { Image } from 'astro:assets'
+
 interface Props {
   title: string
   price: number
@@ -10,7 +12,7 @@ const { title, price, quantity, img } = Astro.props
 
 <li class='flex items-center justify-between mb-2 gap-4  border-b p-2'>
   <div class='flex items-center justify-center w-full'>
-    <img class='w-12 h-12 rounded-full' src={img} alt='Product-Image' />
+    <Image src={img} alt={title} width={100} height={100} loading='lazy' />
   </div>
   <div class='flex flex-col  w-full'>
     <span class='font-semibold text-start'>{title}</span>
