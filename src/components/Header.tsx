@@ -9,7 +9,7 @@ const Header: React.FC = () => {
   }
 
   return (
-    <header className='flex justify-between items-center py-[20px] px-[20px] md:px-[80px] lg:[80px] w-full sticky top-0 z-10 bg-black text-white shadow-md'>
+    <header className='flex justify-between items-center py-[20px] px-[20px] md:px-[80px] lg:[80px] w-full sticky top-0 z-20 bg-black text-white shadow-md'>
       <a href='/' className='font-semibold'>
         MONIKA ZAVALA ATELIER
       </a>
