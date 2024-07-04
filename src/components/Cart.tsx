@@ -41,7 +41,7 @@ const Cart: React.FC = () => {
       {/* Popover */}
       <div
         ref={cartPopoverRef}
-        className={`absolute right-0 z-20 w-64 p-4 mt-2 text-black bg-white border border-gray-200 rounded-lg shadow-lg transition-opacity duration-200 ease-in-out ${
+        className={`absolute md:right-0 z-20 w-64 p-4 mt-2 text-black bg-white border border-gray-200 rounded-lg shadow-lg transition-opacity duration-200 ease-in-out ${
           isPopoverOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
         } max-w-full md:max-w-xs`}
         style={{ maxWidth: 'calc(100vw - 16px)' }} // Adjust max-width for mobile view
