@@ -2,11 +2,11 @@
 import Layout from '../../layouts/Layout.astro'
 ---
 <Layout title='Página de Pago'>
-  <section class='min-h-screen flex justify-center items-center'>
+  <section class='min-h-screen flex justify-center items-center py-8'>
     <div class='max-w-md w-full bg-white rounded-lg overflow-hidden shadow-lg p-6 space-y-6'>
       <h2 class='text-2xl font-bold text-center text-gray-800'>Formulario de Pago</h2>
       <div class='flex justify-center'>
-        <img src='/pay/visa_classic_card.webp' alt='card-visa' class='mb-6'/>
+        <img src='/pay/visa.webp' alt='card-visa' class='mb-6' transition:name="card-slide"/>
       </div>
       <form class='space-y-4'>
         <div class='grid grid-cols-1 md:grid-cols-2 gap-4'>
