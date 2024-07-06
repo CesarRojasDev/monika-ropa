@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import Cart from './Cart'
-
 const Header: React.FC = () => {
   const [menuOpen, setMenuOpen] = useState(false)
 
@@ -10,9 +9,17 @@ const Header: React.FC = () => {
 
   return (
     <header className='flex justify-between items-center py-[20px] px-[20px] md:px-[80px] lg:[80px] w-full sticky top-0 z-20 bg-black text-white shadow-md'>
-      <a href='/' className='font-semibold'>
-        MONIKA ZAVALA ATELIER
-      </a>
+      <div className='flex items-center gap-4'>
+        <img
+          src='/logos/logo.png'
+          alt='logo'
+          className='w-8 h-8'
+          loading='eager'
+        />
+        <a href='/' className='font-semibold'>
+          MONIKA ZAVALA ATELIER
+        </a>
+      </div>
       <button
         id='menu-button'
         className='md:hidden text-xl focus:outline-none'

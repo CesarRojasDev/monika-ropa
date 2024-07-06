@@ -37,7 +37,6 @@ const Gallery = () => {
             src='/public/gallery/gal-1.webp'
             alt='img-1'
             className='w-full h-auto rounded-lg shadow-md'
-            loading='lazy'
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -45,7 +44,6 @@ const Gallery = () => {
             src='/public/gallery/gal-2.webp'
             alt='img-2'
             className='w-full h-auto rounded-lg shadow-md'
-            loading='lazy'
           />
         </SwiperSlide>
         <SwiperSlide>
@@ -53,15 +51,6 @@ const Gallery = () => {
             src='/public/gallery/gal-3.webp'
             alt='img-3'
             className='w-full h-auto rounded-lg shadow-md'
-            loading='lazy'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='/public/gallery/gal-4.webp'
-            alt='img-4'
-            className='w-full h-auto rounded-lg shadow-md'
-            loading='lazy'
           />
         </SwiperSlide>
       </Swiper>

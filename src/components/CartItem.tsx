@@ -5,7 +5,7 @@ interface Props {
   img: string;
 }
 
-const CartItem: React.FC<Props> = ({ title, price, quantity, img }) => {
+const CartItem = ({ title, price, quantity, img }: Props) => {
   return (
     <li className="flex items-center justify-between mb-2 gap-4 border-b p-2">
       <div className="flex items-center justify-center w-full">
