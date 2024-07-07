@@ -4,14 +4,11 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation, Pagination, Autoplay } from 'swiper/modules'
 
-const Gallery = () => {
+const Post = () => {
   return (
     <section className='container mx-auto py-10'>
       <Swiper
         spaceBetween={30}
-        navigation
-        pagination={{ clickable: true }}
-        autoplay={{ delay: 3000, disableOnInteraction: false }}
         breakpoints={{
           // When window width is >= 640px
           640: {
@@ -29,48 +26,26 @@ const Gallery = () => {
             spaceBetween: 40,
           },
         }}
-        modules={[Navigation, Pagination, Autoplay]}
         className='mySwiper'
       >
         <SwiperSlide>
           <img
-            src='/public/gallery/gal-1.webp'
+            src='/public/post/coming-soon.webp'
             alt='img-1'
             className='w-full h-auto rounded-lg shadow-md'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src='/public/gallery/gal-2.webp'
+            src='/public/post/new.webp'
             alt='img-2'
             className='w-full h-auto rounded-lg shadow-md'
           />
         </SwiperSlide>
         <SwiperSlide>
           <img
-            src='/public/gallery/gal-3.webp'
-            alt='img-3'
-            className='w-full h-auto rounded-lg shadow-md'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='/public/gallery/gal-4.webp'
-            alt='img-4'
-            className='w-full h-auto rounded-lg shadow-md'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='/public/gallery/gal-5.webp'
-            alt='img-5'
-            className='w-full h-auto rounded-lg shadow-md'
-          />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img
-            src='/public/gallery/gal-6.webp'
-            alt='img-6'
+            src='/public/post/pronto.webp'
+            alt='img-2'
             className='w-full h-auto rounded-lg shadow-md'
           />
         </SwiperSlide>
@@ -79,4 +54,4 @@ const Gallery = () => {
   )
 }
 
-export default Gallery
+export default Post

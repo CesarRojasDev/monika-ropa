@@ -4,6 +4,7 @@ import Gallery from '../components/Gallery.tsx'
 import Hero from '../components/Hero.astro'
 import Layout from '../layouts/Layout.astro'
 import Offer from '../components/Offer.astro'
+import Post from '../components/Post.tsx'
 import RelatedProducts from '../components/RelatedProducts.astro'
 import Social from '../components/Social.astro'
 ---
@@ -12,7 +13,8 @@ import Social from '../components/Social.astro'
   <Hero />
   <RelatedProducts title='Productos Destacados' />
   <Offer />
-  <Gallery client:load/>
+  <Gallery client:load />
   <Characteristics />
   <Social />
+  <Post client:load />
 </Layout>
